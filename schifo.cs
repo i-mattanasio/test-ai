@@ -1,4 +1,11 @@
-if (!string.IsNullOrEmpty(descriptionFilter))
+using System;
+using System.IO;
+
+class Test
+{
+    public static void Main()
+    {
+        if (!string.IsNullOrEmpty(descriptionFilter))
 {
     documents = documents.Where(
         d => d.Description.ToLower().StartsWith(descriptionFilter.ToLower()))
@@ -10,3 +17,6 @@ documents = documents.OrderByDescending(d => d.ContentType)
                      .Skip(numPage * numRowsPage)
                      .Take(numRowsPage + 1)
                      .ToList();
+
+    }
+}
